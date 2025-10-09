@@ -1,4 +1,4 @@
-MAS incinerator_robot {
+MAS incinerator_robot_pathfinding {
 
     infrastructure: Centralised
 
