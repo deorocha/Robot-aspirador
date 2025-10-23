@@ -4,6 +4,11 @@ import sys
 import time
 import os
 
+PROJECT_ROOT = Path(__file__).parent
+CSS_PATH = PROJECT_ROOT / "styles" / "styles.css"
+IMAGES_PATH = PROJECT_ROOT / "images"
+SOUNDS_PATH = PROJECT_ROOT / "sounds"
+
 # Inicialização do Pygame
 pygame.init()
 
@@ -455,3 +460,4 @@ while executando:
 
 pygame.quit()
 sys.exit()
+
