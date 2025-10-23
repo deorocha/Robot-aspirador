@@ -5,7 +5,6 @@ import time
 import os
 
 PROJECT_ROOT = Path(__file__).parent
-CSS_PATH = PROJECT_ROOT / "styles" / "styles.css"
 IMAGES_PATH = PROJECT_ROOT / "images"
 SOUNDS_PATH = PROJECT_ROOT / "sounds"
 
@@ -61,9 +60,9 @@ def carregar_som(nome_arquivo):
         return None
 
 # Carrega os sons
-som_movimento = carregar_som("./sounds/beep.mp3")
-som_vacuum = carregar_som("./sounds/vacuum.mp3")
-som_burning = carregar_som("./sounds/burning.mp3")
+som_movimento = carregar_som(SOUNDS_PATH / "beep.mp3")
+som_vacuum = carregar_som(SOUNDS_PATH / "vacuum.mp3")
+som_burning = carregar_som(SOUNDS_PATH / "burning.mp3")
 
 # Ajusta o volume dos sons se eles foram carregados corretamente
 if som_movimento:
@@ -96,9 +95,9 @@ def carregar_imagem(nome_arquivo, tamanho=None):
 # Tenta carregar as imagens (substitua pelos caminhos corretos)
 try:
     # Imagens para os robôs e lixo
-    imagem_robo1 = carregar_imagem("./images/robot_11.png", (TAMANHO_CELULA-10, TAMANHO_CELULA-10))
-    imagem_robo2 = carregar_imagem("./images/robot_2.png", (TAMANHO_CELULA-10, TAMANHO_CELULA-10))
-    imagem_lixo = carregar_imagem("./images/lixo_1.png", (TAMANHO_CELULA-10, TAMANHO_CELULA-10))
+    imagem_robo1 = carregar_imagem(IMAGES_PATH / "robot_11.png", (TAMANHO_CELULA-10, TAMANHO_CELULA-10))
+    imagem_robo2 = carregar_imagem(IMAGES_PATH / "robot_2.png", (TAMANHO_CELULA-10, TAMANHO_CELULA-10))
+    imagem_lixo = carregar_imagem(IMAGES_PATH / "lixo_1.png", (TAMANHO_CELULA-10, TAMANHO_CELULA-10))
 except:
     # Fallback se as imagens não forem encontradas
     imagem_robo1 = None
@@ -460,4 +459,5 @@ while executando:
 
 pygame.quit()
 sys.exit()
+
 
